@@ -1,14 +1,14 @@
-let noticiasCarregadas = false;
+let promoCarregadas = false;
 
 function lerNoticias() {
     const container = document.getElementById("container");
 
-    if (!noticiasCarregadas) {
+    if (!promoCarregadas) {
         carregarNoticias();
-        noticiasCarregadas = true;
+        promoCarregadas = true;
     } else {
         container.innerHTML = "";
-        noticiasCarregadas = false;
+        promoCarregadas = false;
     }
 }
 
@@ -23,10 +23,10 @@ function carregarNoticias() {
         cartao.innerHTML = `
           <img class="imagem" src="${item.imagem}" alt="${item.titulo}">
           <section class="corpo-cartao">
-            <h2 class="titulo-noticia-cartao">${item.titulo}</h2>
+            <h2 class="titulo-promo-cartao">${item.titulo}</h2>
             <p>${item.categoria} - ${item.data}</p>
-            <p class="descricao-noticia-cartao">${item.descricao}</p>
-            <p class="autor-noticia-cartao">${item.autor}</p>
+            <p class="descricao-promo-cartao">${item.descricao}</p>
+            <p class="autor-promo-cartao">${item.autor}</p>
           </section>
           <a class="botao-cartao" href="detalhes.html?id=${item.id}">Leia mais</a>
         `;

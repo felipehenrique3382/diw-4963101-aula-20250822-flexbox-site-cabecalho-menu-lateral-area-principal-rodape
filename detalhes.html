@@ -20,15 +20,15 @@
 
         const params = new URLSearchParams(window.location.search);
         const id = parseInt(params.get("id"));
-        const noticia = dados.find(item => item.id === id);
+        const promo = dados.find(item => item.id === id);
 
-        if(noticia) {
+        if(promo) {
             container.innerHTML = `
-               <h1>${noticia.titulo}</h1>
-               <p>${noticia.categoria} - ${noticia.data}</p>
-               <p>${noticia.autor}</p>
-               <img class="painel-img" src="${noticia.imagem}" alt="${noticia.titulo}">
-               <p>${noticia.conteudo}</p>
+               <h1>${promo.titulo}</h1>
+               <p>${promo.categoria} - ${promo.data}</p>
+               <p>${promo.autor}</p>
+               <img class="painel-img" src="${promo.imagem}" alt="${promo.titulo}">
+               <p>${promo.conteudo}</p>
                
                <a href="home.html">
                   <p class="botao-cartao">
@@ -37,7 +37,7 @@
                </a>
             `;
         } else {
-           container.innerHTML = "<h2>Notícia não encontrada!</h2>";
+           container.innerHTML = "<h2>Promocao não encontrada!</h2>";
         }
     </script>
 
